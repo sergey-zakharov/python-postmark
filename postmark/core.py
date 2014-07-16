@@ -456,7 +456,7 @@ class PMMail(object):
             jsontxt = result.read()
             result.close()
             if result.code == 200:
-                self.message_id = json.loads(jsontxt.decode()).get('MessageID', None)
+                self.message_id = json.loads(jsontxt.decode()).get('MessageID', None) 
                 return True
             else:
                 raise PMMailSendException('Return code %d: %s' % (result.code, result.msg))
